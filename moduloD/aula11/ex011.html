@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Paises</title>
+    <style>
+    body{
+        font: normal 18px Arial;
+    }
+    </style>
+</head>
+<body>
+    <h1>Sistema de Paises</h1>
+    Digite o país em que você esta morando: <input type="text" id="txtpais" name="txtpais">
+    <input type="button" value="Verificar" onclick = "verifica()">
+    <div id= "resposta">
+    </div>
+    </div>
+    <script>
+        function verifica(){
+        var texto = window.document.querySelector('input#txtpais');
+        var pais = texto.value;
+        var res = window.document.querySelector('div#resposta');
+        //Este IF verifica se variavel pais esta vazia, caso o usuário não digite um pais ele mostra a mensagem de erro
+        if(pais !='' ){
+            if(pais == 'Brasil'){
+            res.innerHTML = `<p> Você é Brasileiro </p>`;
+            }else{
+                res.innerHTML = `<p>Você é um estrangeiro morando em ${pais}`
+            }
+        }else{
+            //Mensagem de erro
+            res.innerHTML = `<p>Por favor, digite um pais! </p>`
+        }
+        }
+    </script>
+</body>
+</html>
